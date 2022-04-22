@@ -38,16 +38,20 @@ class _HomeState extends State<Home> {
         title: Text('Data'),
         centerTitle: true,
       ),
-      body: Center(
-        child: ElevatedButton(onPressed: _showDatePicker,
-          child:
-          Text(
-              _selectedDate == null
-                  ? 'nenhuma data selecionada!'
-                  : DateFormat('d/MMMM/y').format(_selectedDate!),
-          )
+      body: SingleChildScrollView(
+         child: Center(
+              child: ElevatedButton(onPressed: _showDatePicker,
+                  child:
+                  Text(
+                    _selectedDate == null
+                        ? 'nenhuma data selecionada!'
+                        : DateFormat('d/MMMM/y').format(_selectedDate!),
+                  )
+              )
           )
       )
     );
   }
 }
+// MediaQuery.of(context).textScaleFactor para acessibilidade e responsividade da fonte de acordo com o usuário
+// constraints.maxHeight * 0.5
